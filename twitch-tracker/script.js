@@ -1,3 +1,10 @@
-var add-streamer = document.getElementById("add-streamer");
+var add_streamer = document.querySelector(".add-streamer button");
 
-add-streamer.addEventListener()
+add_streamer.addEventListener("click", function() {
+  console.log("Click!");
+});
+
+function create_query_form() {
+  
+} 
+
