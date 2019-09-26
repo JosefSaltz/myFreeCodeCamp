@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="EN">
+  <head>
+    <title>Quick Survey</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./index.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <header>
+      <h1 id="title">How Much Do Online Surveys Annoy You?</h1>
+    </header>
+    
+    <main>
+      <p id="description">To help gauge the best way to annoy our userbase, we would appreciate it if you could take the time to complete a quick survey.</p>
+      
+      <form id="survey-form" action="" method="POST">
+        
+        <label for="name" id="name-label">Name: </label>
+        <input type="text" name="name" required minlength="2" maxlength="20" size="20">
+
+        <label for="number">Phone: </label>
+        <input type="number" name="number" id="number-label" required minlength="10" maxlength="11" size="11">
+        
+        <label for="email">E-mail: </label>
+        <input type="email" name="email" id="email-label" required>
+        
+        <ol>
+          <li>
+            <fieldset>
+              <legend>Q: When prompted how often do you feel like completing online surveys?</legend>
+              <label for="question1"></label>
+              <input type="radio" name="question1">
+            </fieldset>
+          </li>
+
+          <li>
+            <fieldset>
+              <legend>Q: When requested how frequently are you willing to fill out online surveys?</legend>  
+              <label for="question2"></label>
+              <input type="radio" name="question2">
+            </fieldset>
+          </li>
+
+          <li>
+            <fieldset>
+              <legend>Q: Do you often feel like surveys are repeating the same question?</legend>  
+              <label for="question3"></label>
+                <input type="radio" name="question3">
+            </fieldset>
+          </li>
+
+          <li>
+            <fieldset>
+              <legend>Q: How annoyed do you feel when it feels like you've answered the same question several times?</legend>  
+              <label for="question4"></label>
+                <input type="radio" name="question4">
+            </fieldset>
+          </li>
+
+          <li>
+            <fieldset>
+              <legend>Q: Do you often feel like the questions are created just to fill the space?</legend>  
+              <label for="question5"></label>
+                <input type="radio" name="question5">
+            </fieldset>
+          </li>
+
+          <li>
+            <fieldset>
+              <legend>Q: How annoyed fo you feel when you complete many questions and click submit to be prompted with more questions on the next page?</legend>  
+              <label for="question6"></label>
+                <input type="radio" name="question6">
+            </fieldset>
+          </li>
+
+          <li>
+            <fieldset>
+              <legend>Q: On average how much of a waste of time do you feel filling out a form takes?</legend>  
+              <label for="question7"></label>
+                <input type="radio" name="question7">
+            </fieldset>
+          </li>
+
+          <li>
+            <fieldset>
+              <legend>Q: How sincere would you rate your answers?</legend>  
+              <label for="question8"></label>
+                <input type="radio" name="question8">
+            </fieldset>
+          </li>
+
+          <li>
+            <fieldset>
+              <legend>Q: How much more satisfied would you be if the results of this survey determined the author's continued employment?</legend>  
+              <label for="question9"></label>
+                <input type="radio" name="question9">
+            </fieldset>
+          </li>
+
+          <li>
+            <fieldset>
+              <legend>Q: Do you often feel like it's unnecessary to choose from a spectrum of choices for yes or no questions?</legend>  
+              <label for="question10"></label>
+                <input type="radio" name="question10">
+            </fieldset>
+          </li>
+
+          <li>
+            <fieldset>
+              <legend>Q: Would knowing that the survey contains an uneven number of questions bother you?</legend>  
+              <label for="question11"></label>
+                <input type="radio" name="question11">
+            </fieldset>
+          </li>
+        </ol>
+      </form>
+    </main>
+  </body>
+</html>
