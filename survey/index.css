@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  font-family: Helvetica; 
+}
+
+#description {
+  text-align: center;
+  margin-top: 5%;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+fieldset {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+label {
+  text-align: center;
+}
