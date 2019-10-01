@@ -9,133 +9,123 @@
 
   <body>
     <header>
-      <!--User Story #1-->
-      <h1 id="title"><i>Bland Industries&trade;</i> Customer Satisfaction Survey</h1>
+      <h1 id="title">
+        <i>Bland Industries&trade;</i> Customer Satisfaction Survey
+      </h1>
     </header>
     
     <main>
-      <!--User Story #2-->
-      <p id="description">Thank you for taking the time to complete our survey. We use the information we provide to further better our customer experience.</p>
-      <!--User Story #3-->
+      <p id="description">
+        Thank you for taking the time to complete our survey. We use the information we provide to further better our customer experience.
+      </p>
       <form id="survey-form" action="" method="POST">
-        
-        
-        <!--User Story #10-->
-        <label for="name" id="name-label">Name: </label>
-        <!--User Story #4-->
-        <!--User Story #11-->
-        <input type="text" id="name" name="name" placeholder="Enter your name" required minlength="2" maxlength="20" size="20">
-
-        <!--User Story #10-->
-        <label id="number-label" for="number">Phone: </label>
-        <!--User Story #7-->
-        <!--User Story #11-->
-        <input type="number" name="number" id="number" placeholder="Enter your phone" required minlength="10" maxlength="11" size="11">
-
-        <!--User Story #10-->
-        <label id="email-label" for="email">E-mail: </label>
-        <!--User Story #5-->
-        <!--User Story #11-->
-        <input type="email" name="email" id="email" placeholder="Enter your email" required>
-        <!--User Story #12-->
-        <label for="dropdown">Enroll Mailing List</label>
-          <select name="dropdown" id="dropdown">
-            <option value="choice1">Yes</option>
-            <option value="choice2">No</option>
-          </select>
+        <fieldset id="user_data">      
+          <label for="name" id="name-label">
+            Name: 
+            <input type="text" id="name" name="name" placeholder="Enter your name" required minlength="2" maxlength="20" size="20">
+          </label>
+          <label id="number-label" for="number">
+            Phone: 
+            <input type="number" name="number" id="number" placeholder="Enter your phone" required minlength="10" maxlength="11" size="11"> 
+          </label>
+          <label id="email-label" for="email">
+            E-mail: 
+            <input type="email" name="email" id="email" placeholder="Enter your email" required>
+          </label>
+          <label for="dropdown">
+            Enroll Mailing List
+            <select name="dropdown" id="dropdown">
+              <option value="choice1">Yes</option>
+              <option value="choice2">No</option>
+            </select>
+          </label>  
+        </fieldset>
         
         <ol>
           <li>
-            <!--User Story #13-->
-            <fieldset>
-              <legend>
-                Q: How satisfied are you with customer service's response time?
-              </legend>
-              <label for="v_unsatisfied1">
+            <fieldset class="fieldset">
+              <legend>Q: How well do you feel your issue was resolved?
+              </legend>  
+              <label for="v_unsatisfied2">
                 Very Unsastisfied <br>
-                
-                <input id="v_unsatisfied1" type="radio" class="choice-spectrum" name="choice-spectrum">
+                <input id="v_unsatisfied2" type="radio" class="choice-spectrum" name="choice-spectrum">
               </label>
-
-              <label for="unsatisfied1">
-                  Unsastisfied <br>
-                <input id="unsatisfied1"type="radio" class="choice-spectrum" name="choice-spectrum">
+              <label for="unsatisfied2">
+                Unsastisfied <br>
+                <input id="unsatisfied2"type="radio" class="choice-spectrum" name="choice-spectrum">
               </label>
-
-              <label for="somewhat_unsat1">
-                  Somewhat Unsatisfied <br>
-                <input id="somewhat_unsat1" type="radio" class="choice-spectrum" name="choice-spectrum">
+              <label for="somewhat_unsat2">
+                Somewhat Unsatisfied <br>
+                <input id="somewhat_unsat2" type="radio" class="choice-spectrum" name="choice-spectrum">
               </label>
-
-              <label for="neutral">
-                  Neutral <br>
-                <input id="neutral" type="radio" class="choice-spectrum" name="choice-spectrum">
+              <label for="neutral2">
+                Neutral <br>
+                <input id="neutral2" type="radio" class="choice-spectrum" name="choice-spectrum">
               </label>
-
-              <label for="somewhat_sat1">
-                  Somewhat Satisfied <br>
-                  <input id="somewhat_sat1" type="radio" class="choice-spectrum" name="choice-spectrum">
+              <label for="somewhat_sat2">
+                Somewhat Satisfied <br>
+                <input id="somewhat_sat2" type="radio" class="choice-spectrum" name="choice-spectrum">
               </label>
-              <label for="sat1">
-                  Satisfied <br>
-                <input id="sat1" type="radio" class="choice-spectrum" name="choice-spectrum">
-            </label>
-            <label for="very_sat1">
+              <label for="sat2">
+                Satisfied <br>
+                <input id="sat2" type="radio" class="choice-spectrum" name="choice-spectrum">
+              </label>
+              <label for="very_sat2">
                 Very Sastisfied <br>
-              <input id="very_sat1" type="radio" class="choice-spectrum" name="choice-spectrum">
-          </label>
-            </fieldset>
-          </li>
-
-          <li>
-            <!--User Story #13-->
-            <fieldset>
-              <legend>Q: How well do you feel your issue was resolved?</legend>  
-              <label for="question2"></label>
-              <input type="radio" name="question2">
-            </fieldset>
-          </li>
-
-          <li>
-            <!--User Story #13-->
-            <fieldset>
-              <legend>Q: What groups would you recommend our product to?</legend>  
-              
-              <label for="question3">
-                <input type="checkbox" name="question3">
-                Friends
-              </label>
-              
-              <label for="question3">
-                <input type="checkbox" name="question3">
-                Family
-              </label>
-              
-              <label for="question3">
-                  <input type="checkbox" name="question3">
-                  Colleagues
-              </label>
-            
-              <label for="question3">
-                  <input type="checkbox" name="question3">
-                  Clients
+                <input id="very_sat2" type="radio" class="choice-spectrum" name="choice-spectrum">
               </label>
             </fieldset>
-          </li>
-
+          </li>          
           <li>
-            <!--User Story #13-->
-            <fieldset>
+            <fieldset class="fieldset">
+              <legend>
+                How likely are you to recommend our products to your clients?
+              </legend>
+              <label for="v_unsatisfied3">
+                  Very Unsastisfied <br>
+                  <input id="v_unsatisfied3" type="radio" class="choice-spectrum" name="choice-spectrum">
+                </label>
+  
+                <label for="unsatisfied3">
+                  Unsastisfied <br>
+                  <input id="unsatisfied3"type="radio" class="choice-spectrum" name="choice-spectrum">
+                </label>
+  
+                <label for="somewhat_unsat3">
+                  Somewhat Unsatisfied <br>
+                  <input id="somewhat_unsat3" type="radio" class="choice-spectrum" name="choice-spectrum">
+                </label>
+  
+                <label for="neutral3">
+                  Neutral <br>
+                  <input id="neutral3" type="radio" class="choice-spectrum" name="choice-spectrum">
+                </label>
+  
+                <label for="somewhat_sat3">
+                    Somewhat Satisfied <br>
+                    <input id="somewhat_sat3" type="radio" class="choice-spectrum" name="choice-spectrum">
+                </label>
+                <label for="sat3">
+                    Satisfied <br>
+                  <input id="sat3" type="radio" class="choice-spectrum" name="choice-spectrum">
+              </label>
+              <label for="very_sat3">
+                  Very Sastisfied <br>
+                <input id="very_sat3" type="radio" class="choice-spectrum" name="choice-spectrum">
+              </label>
+            </fieldset>
+          </li>
+          <li>
+            <fieldset class="fieldset">
               <legend>Q: How likely are you to continue buying our products?</legend>  
               <label for="question4"></label>
                 <input type="radio" name="question4">
             </fieldset>
           </li>
-
           <li>
-            <!--User Story #13-->
-            <fieldset>
-              <legend>Q: Are you interested in future updates from us?</legend>  
+            <fieldset class="fieldset">
+              <legend>Q: Are you interested in future updates from us?
+              </legend>  
               <label for="question5"></label>
                 <input type="radio" name="question5">
             </fieldset>

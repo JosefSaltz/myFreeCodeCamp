@@ -8,12 +8,24 @@
   margin-top: 5%;
 }
 
+#user_data {
+  display: flex;
+  flex-direction: column;
+  
+}
+
 header {
   display: flex;
   justify-content: center;
 }
 
-fieldset {
+li {
+  margin: 0 auto;
+  width: 80%;
+}
+
+li .fieldset
+{
   display: flex;
   justify-content: space-evenly;
 }
