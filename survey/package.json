@@ -1,0 +1,14 @@
+{
+  "name": "survey",
+  "version": "1.0.0",
+  "description": "freeCodeCamp Survey Project by Josef Saltz",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "intl-tel-input": "^16.0.4"
+  }
+}

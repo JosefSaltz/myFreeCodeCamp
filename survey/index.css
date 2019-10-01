@@ -3,6 +3,15 @@
   font-family: Helvetica; 
 }
 
+/* International Phone Number CSS Overrides */
+.iti_flag {
+  background-image:("./node_modules/intl-tel-input/src/spec/")
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .iti__flag {background-image: url("path/to/flags@2x.png");}
+}
+
 #description {
   text-align: center;
   margin-top: 5%;
@@ -28,8 +37,4 @@ li .fieldset
 {
   display: flex;
   justify-content: space-evenly;
-}
-
-label {
-  text-align: center;
 }

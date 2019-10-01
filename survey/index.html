@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./index.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./node_modules/intl-tel-input/src/css/intlTelInput.scss">
   </head>
 
   <body>
@@ -20,19 +21,19 @@
       </p>
       <form id="survey-form" action="" method="POST">
         <fieldset id="user_data">      
-          <label for="name" id="name-label">
+          <label for="name" id="name-label" class="label-user_dat">
             Name: 
             <input type="text" id="name" name="name" placeholder="Enter your name" required minlength="2" maxlength="20" size="20">
           </label>
-          <label id="number-label" for="number">
+          <label id="number-label" for="number" class="label-user_data">
             Phone: 
-            <input type="number" name="number" id="number" placeholder="Enter your phone" required minlength="10" maxlength="11" size="11"> 
+            <input type="tel" name="number" id="phone" placeholder="Enter your phone" required minlength="10" maxlength="11" size="20"> 
           </label>
-          <label id="email-label" for="email">
+          <label id="email-label" for="email" class="label-user_data">
             E-mail: 
             <input type="email" name="email" id="email" placeholder="Enter your email" required>
           </label>
-          <label for="dropdown">
+          <label for="dropdown" class="label-user_data">
             Enroll Mailing List
             <select name="dropdown" id="dropdown">
               <option value="choice1">Yes</option>
@@ -46,33 +47,33 @@
             <fieldset class="fieldset">
               <legend>Q: How well do you feel your issue was resolved?
               </legend>  
-              <label for="v_unsatisfied2">
+              <label for="v_unsatisfied1">
                 Very Unsastisfied <br>
-                <input id="v_unsatisfied2" type="radio" class="choice-spectrum" name="choice-spectrum">
+                <input id="v_unsatisfied1" type="radio" class="choice-spectrum" name="choice-spectrum">
               </label>
-              <label for="unsatisfied2">
+              <label for="unsatisfied1">
                 Unsastisfied <br>
-                <input id="unsatisfied2"type="radio" class="choice-spectrum" name="choice-spectrum">
+                <input id="unsatisfied1"type="radio" class="choice-spectrum" name="choice-spectrum">
               </label>
-              <label for="somewhat_unsat2">
+              <label for="somewhat_unsat1">
                 Somewhat Unsatisfied <br>
-                <input id="somewhat_unsat2" type="radio" class="choice-spectrum" name="choice-spectrum">
+                <input id="somewhat_unsat1" type="radio" class="choice-spectrum" name="choice-spectrum">
               </label>
-              <label for="neutral2">
+              <label for="neutral1">
                 Neutral <br>
-                <input id="neutral2" type="radio" class="choice-spectrum" name="choice-spectrum">
+                <input id="neutral1" type="radio" class="choice-spectrum" name="choice-spectrum">
               </label>
-              <label for="somewhat_sat2">
+              <label for="somewhat_sat1">
                 Somewhat Satisfied <br>
-                <input id="somewhat_sat2" type="radio" class="choice-spectrum" name="choice-spectrum">
+                <input id="somewhat_sat1" type="radio" class="choice-spectrum" name="choice-spectrum">
               </label>
-              <label for="sat2">
+              <label for="sat1">
                 Satisfied <br>
-                <input id="sat2" type="radio" class="choice-spectrum" name="choice-spectrum">
+                <input id="sat1" type="radio" class="choice-spectrum" name="choice-spectrum">
               </label>
-              <label for="very_sat2">
+              <label for="very_sat1">
                 Very Sastisfied <br>
-                <input id="very_sat2" type="radio" class="choice-spectrum" name="choice-spectrum">
+                <input id="very_sat1" type="radio" class="choice-spectrum" name="choice-spectrum">
               </label>
             </fieldset>
           </li>          
@@ -136,3 +137,10 @@
     </main>
   </body>
 </html>
+
+
+<script src="./node_modules/intl-tel-input/src/js/intlTelInput.js"></script>
+<script>
+  var input = document.querySelector('#phone');
+  window.intlTelInput(input);
+</script>
