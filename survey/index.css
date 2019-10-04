@@ -4,7 +4,7 @@
 }
 
 /* International Phone Number CSS Overrides */
-.iti_flag {
+.iti__flag {
   background-image:("./node_modules/intl-tel-input/src/spec/")
 }
 
@@ -17,10 +17,18 @@
   margin-top: 5%;
 }
 
-#user_data {
+#fieldset-user_data {
   display: flex;
   flex-direction: column;
-  
+}
+
+.fieldset-questions {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+label {
+  text-align: center;
 }
 
 header {
@@ -31,10 +39,4 @@ header {
 li {
   margin: 0 auto;
   width: 80%;
-}
-
-li .fieldset
-{
-  display: flex;
-  justify-content: space-evenly;
 }

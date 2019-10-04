@@ -19,15 +19,16 @@
       <p id="description">
         Thank you for taking the time to complete our survey. We use the information we provide to further better our customer experience.
       </p>
-      <form id="survey-form" action="" method="POST">
-        <fieldset id="user_data">      
+      <form id="form-survey" action="" method="POST">
+        <fieldset id="fieldset-user_data">      
           <label for="name" id="name-label" class="label-user_dat">
             Name: 
             <input type="text" id="name" name="name" placeholder="Enter your name" required minlength="2" maxlength="20" size="20">
           </label>
-          <label id="number-label" for="number" class="label-user_data">
+          <label id="number-label" for="phone" class="label-user_data">
             Phone: 
-            <input type="tel" name="number" id="phone" placeholder="Enter your phone" required minlength="10" maxlength="11" size="20"> 
+            <!--International Phone Input Plugin-->
+            <input type="tel" name="number" id="phone" placeholder="Enter your phone" required> 
           </label>
           <label id="email-label" for="email" class="label-user_data">
             E-mail: 
@@ -42,17 +43,16 @@
           </label>  
         </fieldset>
         
-        <ol>
+        <ol id="list-questions">
           <li>
-            <fieldset class="fieldset">
-              <legend>Q: How well do you feel your issue was resolved?
-              </legend>  
+            <fieldset class="fieldset-questions">
+              <legend>Q: How well do you feel your issue was resolved?</legend>  
               <label for="v_unsatisfied1">
-                Very Unsastisfied <br>
+                Very Unsatisfied <br>
                 <input id="v_unsatisfied1" type="radio" class="choice-spectrum" name="choice-spectrum">
               </label>
               <label for="unsatisfied1">
-                Unsastisfied <br>
+                Unsatisfied <br>
                 <input id="unsatisfied1"type="radio" class="choice-spectrum" name="choice-spectrum">
               </label>
               <label for="somewhat_unsat1">
@@ -78,53 +78,53 @@
             </fieldset>
           </li>          
           <li>
-            <fieldset class="fieldset">
+            <fieldset class="fieldset-questions">
               <legend>
                 How likely are you to recommend our products to your clients?
               </legend>
-              <label for="v_unsatisfied3">
-                  Very Unsastisfied <br>
-                  <input id="v_unsatisfied3" type="radio" class="choice-spectrum" name="choice-spectrum">
+              <label for="v_unsatisfied2">
+                  Very Unsatisfied <br>
+                  <input id="v_unsatisfied2" type="radio" class="choice-spectrum" name="choice-spectrum">
                 </label>
   
-                <label for="unsatisfied3">
-                  Unsastisfied <br>
-                  <input id="unsatisfied3"type="radio" class="choice-spectrum" name="choice-spectrum">
+                <label for="unsatisfied2">
+                  Unsatisfied <br>
+                  <input id="unsatisfied2"type="radio" class="choice-spectrum" name="choice-spectrum">
                 </label>
   
-                <label for="somewhat_unsat3">
+                <label for="somewhat_unsat2">
                   Somewhat Unsatisfied <br>
-                  <input id="somewhat_unsat3" type="radio" class="choice-spectrum" name="choice-spectrum">
+                  <input id="somewhat_unsat2" type="radio" class="choice-spectrum" name="choice-spectrum">
                 </label>
   
-                <label for="neutral3">
+                <label for="neutral2">
                   Neutral <br>
-                  <input id="neutral3" type="radio" class="choice-spectrum" name="choice-spectrum">
+                  <input id="neutral2" type="radio" class="choice-spectrum" name="choice-spectrum">
                 </label>
   
-                <label for="somewhat_sat3">
+                <label for="somewhat_sat2">
                     Somewhat Satisfied <br>
-                    <input id="somewhat_sat3" type="radio" class="choice-spectrum" name="choice-spectrum">
+                    <input id="somewhat_sat2" type="radio" class="choice-spectrum" name="choice-spectrum">
                 </label>
-                <label for="sat3">
+                <label for="sat2">
                     Satisfied <br>
-                  <input id="sat3" type="radio" class="choice-spectrum" name="choice-spectrum">
+                  <input id="sat2" type="radio" class="choice-spectrum" name="choice-spectrum">
               </label>
-              <label for="very_sat3">
+              <label for="very_sat2">
                   Very Sastisfied <br>
-                <input id="very_sat3" type="radio" class="choice-spectrum" name="choice-spectrum">
+                <input id="very_sat2" type="radio" class="choice-spectrum" name="choice-spectrum">
               </label>
             </fieldset>
           </li>
           <li>
-            <fieldset class="fieldset">
+            <fieldset class="fieldset-questions">
               <legend>Q: How likely are you to continue buying our products?</legend>  
               <label for="question4"></label>
                 <input type="radio" name="question4">
             </fieldset>
           </li>
           <li>
-            <fieldset class="fieldset">
+            <fieldset class="fieldset-questions">
               <legend>Q: Are you interested in future updates from us?
               </legend>  
               <label for="question5"></label>
@@ -142,5 +142,8 @@
 <script src="./node_modules/intl-tel-input/src/js/intlTelInput.js"></script>
 <script>
   var input = document.querySelector('#phone');
-  window.intlTelInput(input);
+  console.log(input);
+  window.intlTelInput(input, ({
+    utilsScript: true,
+  }));
 </script>
