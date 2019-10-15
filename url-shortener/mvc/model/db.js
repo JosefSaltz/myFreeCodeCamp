@@ -1,4 +1,6 @@
-require('dotenv').config();
+// Contains the db schemas models and getter/setter functions and accompanying logic
+
+require('dotenv').config({ silent: true });
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
@@ -7,21 +9,23 @@ mongoose.connect(process.env.MONGO_URI);
 var docSchema = new Schema({
   source_url: {
     type: String,
+    unique: true,
     required: true
   },
 
   shortened_url: {
     type: String,
+    unique: true,
     required: true
   }
 });
 
 var docmodel = mongoose.model('url', docSchema);
 
-function testFunc(done) { 
-  var url = new docmodel({
-    source_url: 'www.josefsaltz.com',
-    shortened_url: 'www.jps.com'
+function saveURL(source_url, shortened_url, done) { 
+  const url = new urlmodel({
+    source_url,
+    shortened_url
   });
 
   url.save((err, data) => {
@@ -34,7 +38,6 @@ function testFunc(done) {
 
 }
 
-testFunc();
+saveURL();
 
- 
-
+export { saveURL };
