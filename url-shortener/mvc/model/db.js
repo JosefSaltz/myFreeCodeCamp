@@ -1,12 +1,12 @@
 // Contains the db schemas models and getter/setter functions and accompanying logic
 
 require('dotenv').config({ silent: true });
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 mongoose.connect(process.env.MONGO_URI);
 
-var docSchema = new Schema({
+const docSchema = new Schema({
   source_url: {
     type: String,
     unique: true,
@@ -20,7 +20,7 @@ var docSchema = new Schema({
   }
 });
 
-var docmodel = mongoose.model('url', docSchema);
+const url_pair_model = mongoose.model('url', docSchema);
 
 function saveURL(source_url, shortened_url, done) { 
   const url = new urlmodel({

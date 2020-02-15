@@ -1,13 +1,11 @@
-//Helper function for creating a shortened and randomly unique four char string
-function* fourChars(let i = 0, let end = 3, let step = 1) {
-  //Should generate a four character random string
+
+//Takes user inputted url and generates a unique string then returns both as an array
+//Input should be sanitized
+//Input should be checked to make sure it is valid url
+
+function create_pair(source_url) {
+  let uniqueStr = Math.random().toString(36).subString(2) + Dat.now().toString(36)
+  const pair = [ source_url, uniqueStr ];
+  return pair
 }
 
-function string_shorten(source_url) {
-  //Takes in a input string and returns the input string and returns an object
-  //Containing both the original string and a randomized four character string
-}
-
-
-
-export default string_shorten();

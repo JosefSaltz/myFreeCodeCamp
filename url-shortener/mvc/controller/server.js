@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+import generate_minified from './minified_url';
 
 //Request Logger Middleware
 app.use((req, res, next) => {
@@ -14,6 +15,7 @@ app.get('/', (req, res) => {
 
 //Link Shortener API
 app.post('/api/shorturl/new', (req, res) => {
+  
   //Should start a post request to the db
   //A url and randomized four char string should be saved to a JSON object
   //The url and four char string should both be unique in the db
