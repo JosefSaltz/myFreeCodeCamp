@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 import generate_minified from './minified_url';
 
+
 //Request Logger Middleware
 app.use((req, res, next) => {
   console.log(req.method + " " + req.path + " - " + req.ip);
@@ -26,3 +27,4 @@ app.post('/api/shorturl/new', (req, res) => {
 
 app.listen(8080);
 console.log('Server started and listening on 8080');
+
