@@ -1,6 +1,8 @@
 const mocha = "mocha";
 const chai = "chai";
-const create_tiny_str = require('../src/controller/createString');
+const create_tiny_str = require('../lib/controller/createString');
+
+
 
 describe('Creates Tiny String', () => {
   it('should return a tiny random string')}, () => {
