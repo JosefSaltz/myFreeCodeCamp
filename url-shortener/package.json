@@ -10,6 +10,8 @@
   "author": "Josef Saltz",
   "license": "ISC",
   "dependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
     "dotenv": "^8.1.0",
     "google-closure-library": "^20200204.0.0",
     "mongodb": "^3.3.2",
@@ -19,7 +21,6 @@
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
-    "babel": "^6.23.0",
     "chai": "^4.2.0",
     "eslint": "^6.5.1",
     "mocha": "^7.0.1"

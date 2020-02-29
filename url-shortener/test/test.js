@@ -1,13 +1,12 @@
 const mocha = "mocha";
 const chai = "chai";
-const create_tiny_str = require('../lib/controller/createString');
-
-
+const assert = require('assert');
+const create_ustr = require('../lib/controller/createString');
 
 describe('Creates Tiny String', () => {
-  it('should return a tiny random string')}, () => {
-    assert.isString(create_tiny_str());
+  it('Should return a tiny random string')}, () => {
+    assert.isString(create_ustr());
   });
-  it('should be less than n characters', () => {
-    assert.isAtLeast((create_tiny_str()).length, 5, 'string at least 5 characters');
+  it('Should be at least characters', () => {
+    assert.isAtLeast((create_ustr().length), 5, 'string at least 5 characters');
   });
