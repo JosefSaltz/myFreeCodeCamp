@@ -1,149 +1,93 @@
 <!DOCTYPE html>
 <html lang="EN">
   <head>
-    <title>Quick Survey</title>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <title>Subscription Survey</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="./index.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="./node_modules/intl-tel-input/src/css/intlTelInput.scss">
+    <link rel="stylesheet" href="./index.css" type="text/css">
   </head>
-
   <body>
     <header>
       <h1 id="title">
-        <i>Bland Industries&trade;</i> Customer Satisfaction Survey
+        Subscription Usage Survey
       </h1>
+      <p id="description">This is a survey that intends to gather data on user subscription habits and usage.</p>
     </header>
-    
-    <main>
-      <p id="description">
-        Thank you for taking the time to complete our survey. We use the information we provide to further better our customer experience.
-      </p>
-      <form id="form-survey" action="" method="POST">
-        <fieldset id="fieldset-user_data">      
-          <label for="name" id="name-label" class="label-user_dat">
-            Name: 
-            <input type="text" id="name" name="name" placeholder="Enter your name" required minlength="2" maxlength="20" size="20">
-          </label>
-          <label id="number-label" for="phone" class="label-user_data">
-            Phone: 
-            <!--International Phone Input Plugin-->
-            <input type="tel" name="number" id="phone" placeholder="Enter your phone" required> 
-          </label>
-          <label id="email-label" for="email" class="label-user_data">
-            E-mail: 
-            <input type="email" name="email" id="email" placeholder="Enter your email" required>
-          </label>
-          <label for="dropdown" class="label-user_data">
-            Enroll Mailing List
-            <select name="dropdown" id="dropdown">
-              <option value="choice1">Yes</option>
-              <option value="choice2">No</option>
-            </select>
-          </label>  
-        </fieldset>
-        
-        <ol id="list-questions">
-          <li>
-            <fieldset class="fieldset-questions">
-              <legend>Q: How well do you feel your issue was resolved?</legend>  
-              <label for="v_unsatisfied1">
-                Very Unsatisfied <br>
-                <input id="v_unsatisfied1" type="radio" class="choice-spectrum" name="choice-spectrum">
-              </label>
-              <label for="unsatisfied1">
-                Unsatisfied <br>
-                <input id="unsatisfied1"type="radio" class="choice-spectrum" name="choice-spectrum">
-              </label>
-              <label for="somewhat_unsat1">
-                Somewhat Unsatisfied <br>
-                <input id="somewhat_unsat1" type="radio" class="choice-spectrum" name="choice-spectrum">
-              </label>
-              <label for="neutral1">
-                Neutral <br>
-                <input id="neutral1" type="radio" class="choice-spectrum" name="choice-spectrum">
-              </label>
-              <label for="somewhat_sat1">
-                Somewhat Satisfied <br>
-                <input id="somewhat_sat1" type="radio" class="choice-spectrum" name="choice-spectrum">
-              </label>
-              <label for="sat1">
-                Satisfied <br>
-                <input id="sat1" type="radio" class="choice-spectrum" name="choice-spectrum">
-              </label>
-              <label for="very_sat1">
-                Very Sastisfied <br>
-                <input id="very_sat1" type="radio" class="choice-spectrum" name="choice-spectrum">
-              </label>
-            </fieldset>
-          </li>          
-          <li>
-            <fieldset class="fieldset-questions">
-              <legend>
-                How likely are you to recommend our products to your clients?
-              </legend>
-              <label for="v_unsatisfied2">
-                  Very Unsatisfied <br>
-                  <input id="v_unsatisfied2" type="radio" class="choice-spectrum" name="choice-spectrum">
-                </label>
-  
-                <label for="unsatisfied2">
-                  Unsatisfied <br>
-                  <input id="unsatisfied2"type="radio" class="choice-spectrum" name="choice-spectrum">
-                </label>
-  
-                <label for="somewhat_unsat2">
-                  Somewhat Unsatisfied <br>
-                  <input id="somewhat_unsat2" type="radio" class="choice-spectrum" name="choice-spectrum">
-                </label>
-  
-                <label for="neutral2">
-                  Neutral <br>
-                  <input id="neutral2" type="radio" class="choice-spectrum" name="choice-spectrum">
-                </label>
-  
-                <label for="somewhat_sat2">
-                    Somewhat Satisfied <br>
-                    <input id="somewhat_sat2" type="radio" class="choice-spectrum" name="choice-spectrum">
-                </label>
-                <label for="sat2">
-                    Satisfied <br>
-                  <input id="sat2" type="radio" class="choice-spectrum" name="choice-spectrum">
-              </label>
-              <label for="very_sat2">
-                  Very Sastisfied <br>
-                <input id="very_sat2" type="radio" class="choice-spectrum" name="choice-spectrum">
-              </label>
-            </fieldset>
-          </li>
-          <li>
-            <fieldset class="fieldset-questions">
-              <legend>Q: How likely are you to continue buying our products?</legend>  
-              <label for="question4"></label>
-                <input type="radio" name="question4">
-            </fieldset>
-          </li>
-          <li>
-            <fieldset class="fieldset-questions">
-              <legend>Q: Are you interested in future updates from us?
-              </legend>  
-              <label for="question5"></label>
-                <input type="radio" name="question5">
-            </fieldset>
-          </li>
-        </ol>
-        <input type="button" name="submit" value="submit">
-      </form>
-    </main>
+    <div class="item-container">
+      <div class="question">
+        <h3>1. How many subscriptions do you have on average?</h3>
+      </div>
+      <div class="choice-container">
+        <div class="choice choice-a">
+          <button>0-1</button>
+        </div>
+        <div class="choice choice-b">
+          <button>2-3</button>
+        </div>
+        <div class="choice choice-c">
+          <button>4-6</button>
+        </div>
+        <div class="choice choice-d">
+          <button>7+</button>
+        </div>
+      </div>
+    </div>
+    <div class="item-container">
+      <div class="question">
+        <h3>2. How much are you paying for a subscription on average?</h3>
+      </div>
+      <div class="choice-container">
+        <div class="choice choice-a">
+          <button>$5/month</button>
+        </div>
+        <div class="choice choice-b">
+          <button>$10/month</button>
+        </div>
+        <div class="choice choice-c">
+          <button>$15/month</button>
+        </div>
+        <div class="choice choice-d">
+          <button>$20/month</button>
+        </div>
+      </div>
+    </div>
+    <div class="item-container">
+      <div class="question">
+        <h3>3. How many of your subscriptions are family-plans?</h3>
+      </div>
+      <div class="choice-container">
+        <div class="choice choice-a">
+          <button>0-1</button>
+        </div>
+        <div class="choice choice-b">
+          <button>2-3</button>
+        </div>
+        <div class="choice choice-c">
+          <button>4+</button>
+        </div>
+        <div class="choice choice-d">
+          <button>N/A</button>
+        </div>
+      </div>
+    </div>
+    <div class="item-container">
+      <div class="question">
+        <h3>4. How long do you usually maintain a subscription?</h3>
+      </div>
+      <div class="choice-container">
+        <div class="choice choice-a">
+          <button>One Month</button>
+        </div>
+        <div class="choice choice-b">
+          <button>Two to Three Months</button>
+        </div>
+        <div class="choice choice-c">
+          <button>Six Months</button>
+        </div>
+        <div class="choice choice-d">
+          <button>Indefinitely</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
-
-
-<script src="./node_modules/intl-tel-input/src/js/intlTelInput.js"></script>
-<script>
-  var input = document.querySelector('#phone');
-  console.log(input);
-  window.intlTelInput(input, ({
-    utilsScript: true,
-  }));
-</script>

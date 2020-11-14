@@ -1,42 +1,55 @@
-* {
-  margin: 0;
-  font-family: Helvetica; 
+button {
+  height: 50px;
+  width: 50px;
+  align
 }
 
-/* International Phone Number CSS Overrides */
-.iti__flag {
-  background-image:("./node_modules/intl-tel-input/src/spec/")
+body {
+  background-color: #FFF8E9;
+  font-family: Helvetica;
+  color: #05668D;
 }
 
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .iti__flag {background-image: url("path/to/flags@2x.png");}
+#title {
+  border: solid thin black;
+  text-align: center;
 }
 
 #description {
   text-align: center;
-  margin-top: 5%;
 }
 
-#fieldset-user_data {
-  display: flex;
-  flex-direction: column;
-}
-
-.fieldset-questions {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-label {
+.question {
   text-align: center;
 }
 
-header {
-  display: flex;
-  justify-content: center;
+.choice-container {
+  display: grid;
+  margin: 0 auto;
+  width: 33vw;
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: 2fr 2fr;
+  border: solid thick black;
 }
 
-li {
-  margin: 0 auto;
-  width: 80%;
+.choice {
+  height: 100px;
+  width: 100%;
+  
+}
+
+.choice-a {
+  background-color:#EA4335;
+}
+
+.choice-b {
+  background-color: #FBBC05;
+}
+
+.choice-c {
+  background-color: #34A853;
+}
+
+.choice-d {
+  background-color: #4284FA;
 }
