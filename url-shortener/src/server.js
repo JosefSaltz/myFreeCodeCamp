@@ -20,6 +20,7 @@ app.get('/', (req, res) => {
 
 //Link Shortener API
 app.post('/api/shorturl/new', (req, res) => {
+  console.log("Posting!");
   
   //Should start a post request to the db
   //A url and randomized four char string should be saved to a JSON object
