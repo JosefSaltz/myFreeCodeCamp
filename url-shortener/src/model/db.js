@@ -23,7 +23,7 @@ const docSchema = new Schema({
 const url_pair_model = mongoose.model('url', docSchema);
 
 function saveURL(source_url, shortened_url, done) { 
-  const url = new urlmodel({
+  const url = new url_pair_model({
     source_url,
     shortened_url
   });
@@ -38,6 +38,6 @@ function saveURL(source_url, shortened_url, done) {
 
 }
 
-saveURL();
 
-export { saveURL };
+
+//export { saveURL };

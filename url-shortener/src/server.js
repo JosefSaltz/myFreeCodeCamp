@@ -1,7 +1,11 @@
-const express = require('express');
+//Master controller of application functionality, calls and directls higher level operations of application functionality
+import express from 'express';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
-import generate_minified from './minified_url';
 
+console.log("Starting Server");
 
 //Request Logger Middleware
 app.use((req, res, next) => {
@@ -11,7 +15,7 @@ app.use((req, res, next) => {
 
 //Serves HTML
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/views/index.html');
 });
 
 //Link Shortener API

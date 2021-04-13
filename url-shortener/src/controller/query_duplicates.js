@@ -10,7 +10,10 @@ var hash = sha1.digest();
 
 
 function sanitizeInput() {
-  
+  //Should ensure string is a valid https url
+  //Should sanitize for XSS and SQL Injection
+  //Uses Google Closure to sanitize document?
+
 }
 
 function checkIfURL() {
@@ -24,13 +27,14 @@ function checkIfURL() {
 }
 
 function checkIfDuplicate(source) {
+  //query if url is already in db
+  //on true return shortened link
+  //on false check if uuid is in db
+  //on true re-run function
+  //on false store pair return shortened link
   url_pair.model.find(source) ? true : false;
 }
 
-//query if url is already in db
-//on true return shortened link
-//on false check if uuid is in db
-//on true re-run function
-//on false store pair return shortened link
+
 
 
