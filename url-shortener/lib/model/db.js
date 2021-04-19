@@ -1,19 +1,23 @@
 "use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.saveURL = saveURL;
-
 // Contains the db schemas models and getter/setter functions and accompanying logic
-require('dotenv').config({
-  silent: true
-});
+import dotenv from 'dotenv'
+dotenv.config();
 
-var mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 var Schema = mongoose.Schema;
-mongoose.connect(process.env.MONGO_URI);
+mongoose.set('useUnifiedTopology', true);
+mongoose.connect(
+  process.env.MONGO_URI,
+  //Options obj 
+  { 
+    useNewUrlParser: true, 
+    useCreateIndex: true, 
+    useUnifiedTopology: true
+  }
+);
+
 var docSchema = new Schema({
   source_url: {
     type: String,
@@ -42,4 +46,18 @@ function saveURL(source_url, shortened_url, done) {
   });
 }
 
-saveURL();
+function findURL(url, ) {
+  const query = url_pair_model.find(
+    {"source_url": url}, 
+    (err, person) => {
+      if(err) {
+        return err;
+      }
+  
+      else {
+        console.log(person.source_url);
+      }
+  });
+}
+
+export { saveURL, findURL };

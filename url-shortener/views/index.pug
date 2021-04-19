@@ -1,0 +1,21 @@
+doctype html
+html 
+  head 
+    title= "Shortify Link Shortener"
+    link(rel="stylesheet", href="./styles/index.css")
+    meta(http-equiv="Content-Type", content="text/html;charset=UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  body 
+    div(class="main-content-container")
+      div
+        header 
+            h1= "Cut My Link Up"
+            img(src="./img/keith_flint.jpg", alt="keith_flint.jpg")
+        div 
+            h3= "Please enter a valid link to shorten"
+            form(action="/shorturl/new" method="POST" name="link-input-form")
+              label(for="userLink")= "Link: "
+              input(type="url" name="userLink" required
+              pattern=urlcheck)  
+              input(type="submit", value="Submit")
+    script(src="./scripts/index.js") 

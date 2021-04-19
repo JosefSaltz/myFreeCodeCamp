@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.main-content-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+header {
+  display: block;
+}
+
+img {
+  width: 300px;
+  display: block;
+
+}
+
+h1 {
+  display: block;
+  text-align: center;
+}

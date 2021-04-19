@@ -1,3 +1,5 @@
+
+
 function sanitizeInput(formInput) {
   if(checkIfURL(formInput)) {
     
@@ -16,3 +18,5 @@ function checkIfURL() {
 
   return !!pattern.test(str);
 }
+
+export {checkIfURL, sanitizeInput};
