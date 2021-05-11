@@ -1,19 +1,25 @@
-"use strict";
+'use strict';
+import { customAlphabet } from 'nanoid';
+import { findUserURL, findUURL, saveURL  } from '../model/db.js';
+const nanoid = customAlphabet('abcdef', 8);
 
-//Takes user inputted url and generates a unique string then returns both as an array
-//Input should be sanitized
-//Input should be checked to make sure it is valid url
-import create_ustr from './createString.js'
-import urlFind from '../model/db.js'
+async function create_url_pair(source_url) {
 
-var source_url = document.getElementbyId('url-input').value;
+  const userLinkCheck = await findUserURL(source_url);
 
-function create_url_pair(source_url, short_url) {
-  const pair = [source_url, uniqueStr];
-  let uniqueStr = create_ustr();
-  console.log(`Unique Str created: ${uniqueStr}`);
-  console.log(`Checking....`);
-  let isUnique = findURL(uniqueStr);
-
-  return pair;
+  if(userLinkCheck.length < 0) {
+    console.log(`🔊 Userlink: ${userLinkCheck}`);
+    return [userLinkCheck[0].source_url, userLinkCheck[0].shortened_url]
+  } 
+  
+  else {
+    console.log(`🔊 Link not found, generating pair`);
+    const short_url = nanoid();
+    console.log(`🔊 Short URL Generated: ${short_url}`);
+    const pair = [source_url, short_url];
+    saveURL(pair);
+    return pair;
+  }
 }
+
+export { create_url_pair};

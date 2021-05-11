@@ -3,15 +3,14 @@ import express from 'express';
 import { body, validationResult } from 'express-validator';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import {saveURL, findURL} from './lib/model/db.js'
-import url_pattern from './src/regex/chonky_url_validator.js';
-import create_ustr from './lib/controller/createString.js';
+import { create_url_pair } from './lib/controller/create_url_pair.js'
+import { findUURL, saveURL } from './lib/model/db.js'
 import pug from 'pug';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const url_regex = ''
 
-console.log("\\\\ Starting Server");
+console.log("🚀 Firing Up The Server");
 
 app.set('view engine', 'pug');
 
@@ -21,42 +20,40 @@ app.use(express.static('views'));
 
 //Request Logger Middleware
 app.use((req, res, next) => {
-  console.log(req.method + " " + req.path + " - " + req.ip);
+  console.log("📝 LOGGED: " + req.method + " " + req.path + " - " + req.ip);
   next();
 });
 
 app.use(express.urlencoded({extended: true}));
+app.use(express.json());
 
 //Serves HTML
 app.get('/', (req, res) => {
-  res.status(200).render('index.pug', {urlcheck: url_pattern });
+  res.status(200).render('index.pug');
 });
 
 //Link Shortener API
-app.post('/shorturl/new', (req, res) => {
+app.post('/shorturl/new', async (req, res) => {
+  
   //Log
-  console.log(`\\ POST: ${req.body.userLink}`);
+  console.log(`📬 POST: ${req.body.userLink}`);
   
   //Validate 
   body('user-link').isURL();
   const errors = validationResult(req);
   
+  //Error Response
   if(!errors.isEmpty()) {
     return res.status(400).json({errors: errors.array()});
   }
   
-  //Render if no errors
+  //Create a URL Pair
   else {
     const userLink = req.body.userLink;
-    const shortLink = create_ustr();
-    console.log(`Checking for previous submitted link: ${findURL(userLink)}`);
-
-    //URLsave(userLink)
-    res.status(200).render('success.pug', {userLink, shortLink});
+    const pair = await create_url_pair(userLink)
+    //URLsave(pair)
+    res.status(200).render('success.pug', { pair });
   }
-  
-  
-  console.log(originalurl);
   //Should start a post request to the db
   //A url and randomized four char string should be saved to a JSON object
   //The url and four char string should both be unique in the db
@@ -65,6 +62,13 @@ app.post('/shorturl/new', (req, res) => {
   //If both strings are a unique record it is saved to the db
 })
 
+app.get('/:url', async (req, res) => {
+  const short_req = req.params.url;
+  const lookup = await findUURL(short_req);
+  const result = lookup[0].source_url;
+  res.redirect(301, result)
+})
+
 app.listen(8080, () => {
-  console.log('\\  Server started and listening on 8080');
+  console.log('👂 Listening on 8080');
 });
